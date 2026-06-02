@@ -454,10 +454,16 @@ input, textarea, select {
 @media (min-width: 768px) {
   .bento-grid {
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 300px 300px;
-    height: 620px;
+    /* remove fixed rows/heights so cards can reflow on different viewport heights */
+    grid-auto-rows: minmax(220px, auto);
+    height: auto;
   }
+
+  /* set reasonable minimum heights for desktop grid items */
+  .bento-hero { min-height: 380px; }
+  .bento-sm { min-height: 280px; }
 }
+
 
 .bento-hero {
   grid-column: 1;
